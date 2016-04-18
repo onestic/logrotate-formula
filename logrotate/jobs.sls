@@ -22,6 +22,7 @@ logrotate_{{key}}:
       {% if value is mapping %}
       path: {{ value.get('path', key) }}
       data: {{ value.get('config', []) }}
+      postrotate: {{ value.get('postrotate', []) }}
       {% else %}
       path: {{ key }}
       data: {{ value }}

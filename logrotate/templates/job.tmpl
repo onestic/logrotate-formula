@@ -3,4 +3,12 @@
   {% for item in data %}
   {{ item }}
   {%- endfor %}
+  {% if postrotate -%}
+  sharedscripts
+  postrotate
+      {%- for line in postrotate  %}
+      {{ line }}
+      {%- endfor %}
+  endscript
+  {%- endif %}
 }
